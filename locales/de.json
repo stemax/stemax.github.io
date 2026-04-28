@@ -1,4 +1,9 @@
 {
-  "title": "TorMemoryCards",
-  "description": "Verbessern Sie Ihr Gedächtnis und Ihre Konzentration mit TorMemoryCards! TorMemoryCards ist ein klassisches und unterhaltsames Paar-Pass-Spiel, das entwickelt wurde, um Ihr Gehirn zu trainieren und die visuelle Erkennung zu verbessern. Ideal für Kinder, Studenten und Erwachsene, die geistig fit bleiben und gleichzeitig Spaß haben wollen."
+  "title": "TorMemoryCards - Gedächtnisspiel",
+  "description": "Verbessern Sie Ihr Gedächtnis und Ihre Konzentration mit TorMemoryCards! Ein klassisches Paar-Pass-Spiel, um Ihr Gehirn zu trainieren.",
+  "how_to_play_title": "So wird gespielt",
+  "how_to_play_text": "Finden Sie alle passenden Kartenpaare. Drehen Sie zwei Karten um; wenn sie gleich sind, bleiben sie offen. Wenn nicht, drehen sie sich zurück.",
+  "contact_title": "Support & Ideen",
+  "contact_text": "Haben Sie Verbesserungsvorschläge? Schreiben Sie dem Entwickler",
+  "btn_play": "JETZT BEI Google Play"
 }

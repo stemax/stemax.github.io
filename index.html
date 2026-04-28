@@ -19,6 +19,8 @@
         .footer { margin-top: 50px; font-size: 0.9rem; color: #888; }
         .footer a { color: #3498db; text-decoration: none; margin: 0 10px; }
         .footer a:hover { text-decoration: underline; }
+        .video-container { position: relative; width: 100%; max-width: 315px; margin: 20px auto; aspect-ratio: 9 / 16; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; border: none; shadow: 0 4px 10px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -45,7 +47,14 @@
         <p id="description">Loading...</p>
         
         <a href="https://play.google.com/store/apps/details?id=com.tormemorycards" class="play-button" id="btn_play">GET IT ON Google Play</a>
-
+        <div class="video-container">
+                    <iframe 
+                        src="https://youtube.com" 
+                        title="TorMemoryCards Preview" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+        </div>
         <div class="info-section">
             <h2 id="how_to_play_title">How to play</h2>
             <p id="how_to_play_text">The goal is simple: find all matching pairs of cards. Flip two cards at a time; if they match, they stay open. If not, they flip back. Remember their positions!</p>

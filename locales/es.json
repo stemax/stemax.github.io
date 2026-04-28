@@ -1,4 +1,9 @@
 {
-  "title": "TorMemoryCards",
-  "description": "¡Mejora tu memoria y concentración con TorMemoryCards! TorMemoryCards es un juego clásico y divertido de emparejar parejas, diseñado para desarrollar tu cerebro y mejorar el reconocimiento visual. Perfecto para niños, estudiantes y adultos que quieren mantenerse ágiles mientras se divierten."
+  "title": "TorMemoryCards - Juego de memoria",
+  "description": "¡Mejora tu memoria y concentración con TorMemoryCards! Un juego clásico de emparejar parejas diseñado para entrenar tu cerebro.",
+  "how_to_play_title": "Cómo jugar",
+  "how_to_play_text": "El objetivo es encontrar todos los pares. Voltea dos cartas; si coinciden, se quedan abiertas. Si no, se vuelven a tapar.",
+  "contact_title": "Soporte e Ideas",
+  "contact_text": "¿Tienes ideas o encontraste un error? Escribe al desarrollador",
+  "btn_play": "DISPONIBLE EN Google Play"
 }

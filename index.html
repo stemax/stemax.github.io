@@ -9,19 +9,27 @@
         .lang-switcher { position: absolute; top: 10px; right: 10px; }
         select { padding: 5px; border-radius: 5px; border: 1px solid #ccc; background: white; cursor: pointer; }
         .container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 20px; }
+        
         .logo { width: 220px; height: auto; margin-bottom: 20px; border-radius: 20%; }
-        .example {height: auto; margin-bottom: 20px; border-radius: 20%; }
+        
+        /* Исправление центровки картинки example */
+        .example { width: 100%; max-width: 400px; height: auto; display: block; margin: 20px auto; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        
         h1 { color: #2c3e50; margin-bottom: 10px; }
         p { font-size: 1.1rem; color: #555; margin-bottom: 20px; }
+        
         .play-button { display: inline-block; background: #2ecc71; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 20px 0; transition: transform 0.2s; }
         .play-button:hover { transform: scale(1.05); background: #27ae60; color: white; }
+        
         .info-section { text-align: left; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; }
-        .info-section h2 { color: #2c3e50; font-size: 1.4rem; }
+        .info-section h2 { color: #2c3e50; font-size: 1.4rem; text-align: center; }
+        
+        .video-container { position: relative; width: 100%; max-width: 315px; margin: 20px auto; aspect-ratio: 9 / 16; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        
         .footer { margin-top: 50px; font-size: 0.9rem; color: #888; }
         .footer a { color: #3498db; text-decoration: none; margin: 0 10px; }
         .footer a:hover { text-decoration: underline; }
-        .video-container { position: relative; width: 100%; max-width: 315px; margin: 20px auto; aspect-ratio: 9 / 16; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; border: none; shadow: 0 4px 10px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -46,22 +54,25 @@
         <img src="logo_center.png" alt="TorMemoryCards Logo" class="logo">
         <h1 id="title">TorMemoryCards</h1>
         <p id="description">Loading...</p>
-        
+
         <a href="https://play.google.com/store/apps/details?id=com.tormemorycards" class="play-button" id="btn_play">GET IT ON Google Play</a>
         <div class="video-container">
-                    <iframe 
-                        src="https://youtube.com/shorts/_MuUA09H-40" 
-                        title="TorMemoryCards Preview" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+            <iframe 
+                src="https://youtube.com/embed/_MuUA09H-40" 
+                title="TorMemoryCards Preview" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
+
         <div class="info-section">
             <h2 id="how_to_play_title">How to play</h2>
-            <p id="how_to_play_text">The goal is simple: find all matching pairs of cards. Flip two cards at a time; if they match, they stay open. If not, they flip back. Remember their positions!</p>
+            <p id="how_to_play_text">The goal is simple: find all matching pairs of cards.</p>
+            
             <img src="example.png" alt="Example of level" class="example">
+
             <h2 id="contact_title">Contact & Support</h2>
-            <p id="contact_text">Have a suggestion or found a bug? We'd love to hear from you! Contact the developer at: <a href="mailto:stemax.dev@gmail.com">stemax.dev@gmail.com</a></p>
+            <p id="contact_text">Have a suggestion? Contact the developer at: <a href="mailto:stemax.dev@gmail.com">stemax.dev@gmail.com</a></p>
         </div>
     </div>
 
@@ -86,16 +97,13 @@
                 .then(data => {
                     document.getElementById('description').innerText = data.description || "";
                     if(data.title) document.getElementById('title').innerText = data.title;
-                    
                     if(data.how_to_play_title) document.getElementById('how_to_play_title').innerText = data.how_to_play_title;
                     if(data.how_to_play_text) document.getElementById('how_to_play_text').innerText = data.how_to_play_text;
                     if(data.contact_title) document.getElementById('contact_title').innerText = data.contact_title;
                     if(data.contact_text) document.getElementById('contact_text').innerText = data.contact_text;
                     if(data.btn_play) document.getElementById('btn_play').innerText = data.btn_play;
                 })
-                .catch(err => {
-                    console.error("Error:", err);
-                });
+                .catch(err => console.error("Error:", err));
         }
 
         function changeLang(newLang) { loadContent(newLang); }
